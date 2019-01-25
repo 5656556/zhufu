@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节日祝福</title>
+    <link rel="stylesheet" type="text/css" href="css/ss1.css">
+    <script src="jquery-1.7.1.min.js"></script>
+</head>
+<body class="content">
+<img src="img/aolunda.jpg" width="100%" class="content">
+<div id="icon" class="rotate" onclick="clickMe()">
+</div>
+<audio id="audio" src="img/sound.mp3" autoplay preload loop="loop">浏览器不支持audio</audio>
+
+</body>
+<script>
+    $("#audio").get(0).play();
+    var flag = false;
+    var musicIcon = $("#icon");
+    function clickMe(){
+        if(!flag){
+            //$(this).css({"-webkit-animation-iteration-count":"0"});
+            musicIcon.css({"-webkit-animation-play-state":"paused"});
+            //音乐停止
+            $("#audio").get(0).pause();
+            flag=true;
+        }else{
+            //$(this).css({"-webkit-animation-iteration-count":"infinite"});
+            musicIcon.css({"-webkit-animation-play-state":"running"});
+            //音乐播放
+            $("#audio").get(0).play();
+            flag=false;
+        }
+    }
+
+
+</script>
+</html>
